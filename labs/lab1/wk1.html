@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link href="wk1.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div id="box">div 1</div>
+
+<form>
+    <fieldset>
+        <legend>Change Box</legend>
+        <input type="text" id="user_info" />
+        <input type="button" id="button1" value="change box" />
+    </fieldset>
+</form>
+
+<script>
+	//add event handler to our form button
+	document.getElementById('button1').onclick = function(){ 
+    
+    //create variables to store our info
+    
+    //store user input
+    var text= document.getElementById('user_info').value;
+    
+    //modify input for different height
+    var num= parseInt(text) /2;
+    
+    //convert number back into a css value
+    var height= num + 'px';
+    
+    //now change properties of our box
+    document.getElementById('box').style.width = text;
+    document.getElementById('box').style.height = height;
+    alert(num)
+}
+
+    
+</script>
+</body>
+</html>

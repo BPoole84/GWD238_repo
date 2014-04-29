@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title><Lab4</title>
+<style>
+	#main a{
+		font:1.5em/1.2 Tahoma, Geneva, sans-serif;
+		color:blue;
+		margin:5em;
+	}
+	
+	#pic{
+		width:400px; height:300px;}
+		
+	#caption{
+		font:1em/1.2 Verdana, Geneva, sans-serif;}
+	
+</style>
+</head>
+
+<body>
+	<nav id="main">
+    	<a href="images/lady1.jpg" title="My First Lady">Lady1</a>
+        <a href="images/lady2.jpg" title="My Second Lady">Lady2</a>
+        <a href="images/lady3.jpg" title="My Third Lady">Lady3</a>
+        
+        
+    </nav>
+    
+    <img id="pic" src="images/lady1.jpg" alt="Gallery Lady image" />
+    
+    <p id="caption"> My First Lady</p>
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+	window.onload = init;
+	
+	function init(e)
+	{
+		// collect all anchor tags inside of nav
+		// add event handler onto each of them
+		var links = document.querySelectorAll('main a');
+		for(var i=0; i < links.length; i++)
+		{
+			links[i].onclick = changePic;
+			
+		}
+	}
+	
+	function changePic(e)
+	{
+		e.preventDefault();
+		var pic = document.querySelector('#pic');
+		var caption = document.getElementById('caption');
+		pic.src = e.target.href;
+		caption.firstChild.nodeValue = e.target.title;
+		
+	}
+</script>
+</body>
+</html>

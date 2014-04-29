@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lab 2</title>
+
+<style>
+	#pic{
+		width:400px;
+		height:300px;
+	}
+	nav a{
+		padding:1em;
+		color:green;
+		font: 2em/2 "Lucida Console", Monaco, monospace;
+	}
+	p{
+		font: 1.25em/1.6 Tahoma, Geneva, sans-serif;
+		color:#F00;
+	}
+</style>
+</head>
+
+<body>
+	<nav id="turtle">
+    	<a href="lab2/images/turtle1.jpg" title="All Grown Now">Pic1</a>
+        <a href="lab2/images/turtle2.jpg" title="Young Turtle in training">Pic2</a>
+        <a href="lab2/images/turtle3.jpg" title="Two Turtles Kissing">Pic3</a>
+        
+    </nav>
+    
+    <img id="pic" src="lab2/images/turtle1.jpg" alt="js gallery" />
+    <p id="caption">Where is Metal Head?</p>
+    </p>
+    
+    <script>
+		var turtle = document.getElementById('turtle');
+		var pic = document.querySelector('#pic');
+		var caption = document.querySelector('#caption');
+		var links = document.querySelectorAll('#turtle a');
+		/*
+		alert(links.length);
+		alert('hello');
+		alert('Ralph');
+		alert('Donnie');
+		alert('Mike');
+		alert('Leo');*/
+		
+		for(var i=0; i < links.length; i++)
+		{
+			links[i].onclick = changePic;
+		}
+		
+		function changePic(e)
+		{
+			e.preventDefault();
+			pic.src = e.target.href;
+			caption.firstChild.nodeValue = e.target.title;
+			
+		}
+			
+	</script>
+</body>
+</html>
