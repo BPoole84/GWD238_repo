@@ -30,7 +30,7 @@
     
     <img id="pic" src="images/lady1.jpg" alt="Gallery Lady image" />
     
-    <p id="caption"> My First Lady</p>
+    <p id="caption"> My First Ladies</p>
     
     
     
@@ -50,29 +50,34 @@
 
 <script>
 
-	window.onload = init;
 	
-	function init(e)
+	
+	var gallery = {
+	
+	init: function(e)
 	{
 		// collect all anchor tags inside of nav
 		// add event handler onto each of them
-		var links = document.querySelectorAll('main a');
+		var links = document.querySelectorAll('#main a');
 		for(var i=0; i < links.length; i++)
 		{
-			links[i].onclick = changePic;
+			links[i].onclick = gallery.changePic;
 			
-		}
-	}
+		} 
+	},
 	
-	function changePic(e)
+	changePic: function(e)
 	{
 		e.preventDefault();
 		var pic = document.querySelector('#pic');
 		var caption = document.getElementById('caption');
 		pic.src = e.target.href;
 		caption.firstChild.nodeValue = e.target.title;
-		
+	     
 	}
+	}
+	
+	window.onload = gallery.init;
 </script>
 </body>
 </html>
