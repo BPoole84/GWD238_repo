@@ -10,6 +10,8 @@
 <body>
 
 <div class="container">
+<!-- You will only include things that will stay the same on your page. Like your header and footer.-->
+
   <?php include_once('includes/header.php'); ?>
   
   
